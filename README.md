@@ -6,8 +6,8 @@ These are my dotfiles for the following tools
  - [vim](https://github.com/vim/vim)
 
 ## Install
-
- - Run `./install.sh`. It will symlink the included dotfiles for this repo in your home directory.
+ - Git clone this repo in your home directory (~). 
+ - Run `./install.sh`. It will symlink the included dotfiles from this repo into your home directory.
  - Install [Vundle](https://github.com/VundleVim/Vundle.vim) to manage vim plugins. Install [tmux](https://github.com/tmux/tmux) with [Homebrew](https://brew.sh/). (`brew install tmux`)
  - Install [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) with `https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard`. It allows you to copy paste within tmux in OSX.
  - Run `vim ~/.vimrc` then type `:BundleInstall`. This will install all vim plugins.
