@@ -44,7 +44,7 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'mhinz/vim-mix-format'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'fatih/vim-go'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'rakr/vim-one'
 Plugin 'dracula/vim'
 call vundle#end()
@@ -71,6 +71,10 @@ set guifont=Monaco:h12
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
+
+" spellcheck
+"set spelllang=en_us
+"set spell
 
 " Personal prefs:
 set shiftwidth=2
@@ -248,7 +252,7 @@ let g:ale_fixers = {'javascript': ['eslint', 'prettier'], 'handlebars': ['ember-
 let g:ale_fix_on_save = 0
 
 " Uncomment following line to use Prettier config files and have ALE respect them.
-" let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_javascript_prettier_use_local_config = 1
 
 " JsDoc
 map <Leader>d :JsDoc
