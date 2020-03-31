@@ -262,5 +262,5 @@ let g:ale_javascript_prettier_use_local_config = 1
 " JsDoc
 map <Leader>d :JsDoc
 
-" auto complete with deoplete
+" auto complete with deoplete. Once autocomplete pops up, use Ctrl-n and Ctrl-p to go over selection.
 let g:deoplete#enable_at_startup = 1
