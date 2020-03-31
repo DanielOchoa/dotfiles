@@ -14,13 +14,12 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-endwise'
 " example, ` cs"' ` will change single to double quotes
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-rails' // removing since I don't plan to use rails anytime soon
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'jelera/vim-javascript-syntax' // marked for removal on 7/22/18
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'junegunn/seoul256.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rstacruz/sparkup'
@@ -30,12 +29,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'wting/rust.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'mxw/vim-jsx'
-Plugin 'chase/vim-ansible-yaml'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+" Plugin 'chase/vim-ansible-yaml' // have not used ansible in a long time
 Plugin 'moll/vim-node'
-Plugin 'geekjuice/vim-mocha'
+" Plugin 'geekjuice/vim-mocha' // deprecate since I don't use it
 Plugin 'junegunn/vim-easy-align'
-Plugin 'gilgigilgil/anderson.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'w0rp/ale'
@@ -44,9 +42,16 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'mhinz/vim-mix-format'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'fatih/vim-go'
-"Plugin 'Valloric/YouCompleteMe'
+" color schemes
 Plugin 'rakr/vim-one'
-Plugin 'dracula/vim'
+Plugin 'gilgigilgil/anderson.vim'
+Plugin 'junegunn/seoul256.vim'
+
+" autocompletion with deoplete - see README.md for setup (deps on python3 and some python libs)
+" https://github.com/Shougo/deoplete.nvim/issues/675
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
 call vundle#end()
 
 imap <C-c> <CR><Esc>O
@@ -257,9 +262,5 @@ let g:ale_javascript_prettier_use_local_config = 1
 " JsDoc
 map <Leader>d :JsDoc
 
-" Let's use neovim now..
-if has('nvim')
-    let s:editor_root=expand("~/.config/nvim")
-else
-    let s:editor_root=expand("~/.vim")
-endif
+" auto complete with deoplete
+let g:deoplete#enable_at_startup = 1
