@@ -23,16 +23,14 @@ Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'groenewege/vim-less'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rstacruz/sparkup'
-Plugin 'rking/ag.vim'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'wting/rust.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'MaxMEllon/vim-jsx-pretty'
-" Plugin 'chase/vim-ansible-yaml' // have not used ansible in a long time
 Plugin 'moll/vim-node'
-" Plugin 'geekjuice/vim-mocha' // deprecate since I don't use it
 Plugin 'junegunn/vim-easy-align'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -47,11 +45,6 @@ Plugin 'rakr/vim-one'
 Plugin 'gilgigilgil/anderson.vim'
 Plugin 'junegunn/seoul256.vim'
 
-" autocompletion with deoplete - see README.md for setup (deps on python3 and some python libs)
-" https://github.com/Shougo/deoplete.nvim/issues/675
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
 call vundle#end()
 
 imap <C-c> <CR><Esc>O
@@ -261,6 +254,3 @@ let g:ale_javascript_prettier_use_local_config = 1
 
 " JsDoc
 map <Leader>d :JsDoc
-
-" auto complete with deoplete. Once autocomplete pops up, use Ctrl-n and Ctrl-p to go over selection.
-let g:deoplete#enable_at_startup = 1
