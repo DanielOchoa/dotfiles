@@ -11,7 +11,7 @@ These are my dotfiles for the following tools
  - Run `git clone https://github.com/DanielOchoa/dotfiles.git "${HOME}/.dotfiles"` in the terminal.
  - Run `"${HOME}/.dotfiles/install.sh"`. It will symlink the included dotfiles from this repo into your home directory.
 
-### For Vim Users
+### For Vim Users (Deprecated)
  - You may want to run `brew install vim` to get the latest version of vim since Macos comes with vim 8.x.
  - Install [Vundle](https://github.com/VundleVim/Vundle.vim) to manage vim plugins.
  - Run `vim ~/.vimrc` then type `:BundleInstall`. This will install all vim plugins.
