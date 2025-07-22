@@ -1,4 +1,7 @@
 " Dany's VIM config
+" DEPRECATED
+" This is the legacy vim config I've been using for over a decade. I recommend to use nevim now.
+" See nvim/init.lua
 
 set nocompatible
 filetype off
