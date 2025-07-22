@@ -1,5 +1,4 @@
 -- Neovim options (migrated from .vimrc)
-
 local opt = vim.opt
 
 -- Basic settings
@@ -39,6 +38,7 @@ opt.hidden = true
 opt.backup = true
 opt.swapfile = false
 opt.undofile = true
+opt.autoread = true
 
 -- Set backup directories (using Neovim standard paths)
 opt.backupdir = vim.fn.expand("~/.local/share/nvim/backup//")

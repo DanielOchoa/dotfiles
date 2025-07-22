@@ -37,6 +37,20 @@ autocmd({ "FileType" }, {
   end,
 })
 
+-- Auto-reload files when they change externally (For Cloude Code makign changes, I want these to be reflected
+-- immediately)
+local auto_reload_group = augroup("AutoReload", { clear = true })
+autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  group = auto_reload_group,
+  pattern = "*",
+  command = "if mode() != 'c' | checktime | endif",
+})
+autocmd({ "FileChangedShellPost" }, {
+  group = auto_reload_group,
+  pattern = "*",
+  command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None",
+})
+
 -- Tmux key fixes for screen term
 if vim.env.TERM and vim.env.TERM:match("^screen") then
   vim.cmd([[

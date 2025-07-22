@@ -83,6 +83,10 @@ This release represents a complete modernization of the development environment 
   - `mouse = "a"` (mouse support enabled)
   - `updatetime = 300` (faster LSP diagnostics)
   - `timeoutlen = 500` (faster key sequence timeout)
+- **Auto-reload System**: Added `autoread = true` and autocommands to automatically reload files when changed externally
+  - Triggers on focus change, buffer enter, and cursor idle events
+  - Shows notification when files are reloaded from disk
+  - Enables seamless integration with external file modifications
 
 ### Documentation
 - **Legacy Notice**: Added deprecation notice to original .vimrc pointing users to Neovim config
