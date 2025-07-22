@@ -3,7 +3,6 @@
 local opt = vim.opt
 
 -- Basic settings
-opt.encoding = "utf-8"
 opt.number = true
 opt.wrap = true
 opt.textwidth = 115
@@ -25,17 +24,13 @@ opt.showmatch = true
 -- UI
 opt.cursorline = true
 opt.cursorcolumn = true
-opt.showmode = true
-opt.showcmd = true
-opt.wildmenu = true
-opt.wildmode = "list:longest"
-opt.laststatus = 2
 opt.scrolloff = 3
-opt.ruler = true
-opt.backspace = "indent,eol,start"
+opt.signcolumn = "yes"
+opt.mouse = "a"
+opt.updatetime = 300
+opt.timeoutlen = 500
 
 -- Performance
-opt.ttyfast = true
 opt.lazyredraw = true
 opt.regexpengine = 2
 
@@ -45,13 +40,13 @@ opt.backup = true
 opt.swapfile = false
 opt.undofile = true
 
--- Set backup directories
-opt.backupdir = vim.fn.expand("~/.vim/backup//")
-opt.undodir = vim.fn.expand("~/.vim/undo//")
+-- Set backup directories (using Neovim standard paths)
+opt.backupdir = vim.fn.expand("~/.local/share/nvim/backup//")
+opt.undodir = vim.fn.expand("~/.local/share/nvim/undo//")
 
 -- Create directories if they don't exist
-local backup_dir = vim.fn.expand("~/.vim/backup")
-local undo_dir = vim.fn.expand("~/.vim/undo")
+local backup_dir = vim.fn.expand("~/.local/share/nvim/backup")
+local undo_dir = vim.fn.expand("~/.local/share/nvim/undo")
 
 if vim.fn.isdirectory(backup_dir) == 0 then
   vim.fn.mkdir(backup_dir, "p")
@@ -70,11 +65,8 @@ opt.clipboard = "unnamed"
 -- Terminal colors
 opt.termguicolors = true
 
--- Visual bell
-opt.visualbell = true
-
 -- Comments format
-opt.comments = "sl:/*,mb:*,elx:*/"
+opt.comments = "sl:/*,mb:*,elx:*/*"
 
 -- Disable netrw (we'll use nvim-tree)
 vim.g.loaded_netrw = 1
