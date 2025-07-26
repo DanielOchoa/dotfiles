@@ -24,3 +24,8 @@ Personal configuration files for tmux, vim, and neovim development environment.
 ## Commands
 - Install: `~/.dotfiles/install.sh`
 - Dependencies: `brew install neovim ripgrep fd`
+
+## Claude Instructions
+- Match existing code style exactly - preserve spacing, indentation, and line endings
+- No trailing blank lines unless already present
+- Don't reformat existing code unless explicitly asked
