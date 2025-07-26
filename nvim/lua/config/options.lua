@@ -71,3 +71,6 @@ opt.comments = "sl:/*,mb:*,elx:*/*"
 -- Disable netrw (we'll use nvim-tree)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Buffer/tab behavior
+opt.switchbuf = "useopen,usetab"
