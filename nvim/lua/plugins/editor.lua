@@ -2,7 +2,7 @@
 return {
   -- Tim Pope's sensible defaults
   { "tpope/vim-sensible" },
-  
+
   -- Surround operations (modern Lua version)
   {
     "kylechui/nvim-surround",
@@ -12,7 +12,7 @@ return {
       require("nvim-surround").setup({})
     end,
   },
-  
+
   -- Auto-pairs for brackets, quotes, etc.
   {
     "windwp/nvim-autopairs",
@@ -23,7 +23,7 @@ return {
       })
     end,
   },
-  
+
   -- Comment toggling
   {
     "numToStr/Comment.nvim",
@@ -31,16 +31,16 @@ return {
       require("Comment").setup()
     end,
   },
-  
+
   -- Git integration
   { "tpope/vim-fugitive" },
-  
+
   -- Tmux navigation
   { "christoomey/vim-tmux-navigator" },
-  
+
   -- Auto-close blocks (if-end, do-end, etc.)
   { "tpope/vim-endwise" },
-  
+
   -- Easy text alignment
   {
     "junegunn/vim-easy-align",
@@ -48,7 +48,7 @@ return {
       -- Keymaps are already set in keymaps.lua
     end,
   },
-  
+
   -- Ripgrep integration
   {
     "jremmen/vim-ripgrep",
@@ -58,3 +58,4 @@ return {
     end,
   },
 }
+

@@ -61,6 +61,11 @@ return {
         keymap("n", "<leader>f", function()
           vim.lsp.buf.format({ async = true })
         end, opts)
+        
+        -- Diagnostic navigation
+        keymap("n", "[d", vim.diagnostic.goto_prev, opts)
+        keymap("n", "]d", vim.diagnostic.goto_next, opts)
+        keymap("n", "<leader>e", vim.diagnostic.open_float, opts)
       end
 
       -- Capabilities
