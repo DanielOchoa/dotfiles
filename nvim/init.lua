@@ -1,5 +1,5 @@
 -- Dany's Neovim config
--- Migrated from .vimrc to modern Neovim + Lua
+-- Modern Neovim configuration in Lua
 
 -- Load configuration modules
 require("config.options")

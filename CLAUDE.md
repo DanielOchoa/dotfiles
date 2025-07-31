@@ -3,7 +3,7 @@
 Personal configuration files for tmux, vim, and neovim development environment.
 
 ## Structure
-- **Root**: `.vimrc`, `.tmux.conf`, `install.sh` (symlinks dotfiles to home directory)
+- **Root**: `.tmux.conf`, `install.sh` (symlinks dotfiles to home directory)
 - **nvim/**: Modern Neovim configuration in Lua
   - **lua/plugins/**: Plugin configurations using lazy.nvim
   - **lua/plugins/lsp.lua**: LSP setup with Mason, supports TypeScript, Go, Rust, Elixir, Lua

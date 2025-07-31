@@ -1,4 +1,4 @@
--- Neovim options (migrated from .vimrc)
+-- Neovim options
 local opt = vim.opt
 
 -- Set leader key early (before any plugins load)

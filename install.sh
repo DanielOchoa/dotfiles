@@ -1,7 +1,7 @@
 echo "Installing dotfiles..."
 
 # List dotfiles here
-dotfiles=(".tmux.conf" ".vimrc")
+dotfiles=(".tmux.conf")
 
 # List config directories (for .config/ directory)
 configdirs=("nvim")

@@ -1,4 +1,4 @@
--- Neovim keymaps (migrated from .vimrc)
+-- Neovim keymaps
 
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }

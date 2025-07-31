@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Modern Surround**: nvim-surround written in Lua for better performance
 
 ### Changed
-- **Plugin Replacements**: 
+- **Plugin Replacements**:
   - NERDTree → nvim-tree.lua (8k stars)
   - ctrlp.vim → telescope.nvim (18k stars)
   - vim-airline → lualine.nvim (7k stars)
@@ -51,7 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Migration Benefits
 - **Speed**: Lazy-loading plugins and native Lua execution
 - **Modern Features**: Built-in LSP, Treesitter, and advanced completion
-- **Maintainability**: Cleaner, more organized configuration structure  
+- **Maintainability**: Cleaner, more organized configuration structure
 - **Future-proof**: Uses actively maintained, popular plugins
 - **Developer Experience**: Enhanced debugging, formatting, and language support
 
@@ -60,7 +60,7 @@ This release represents a complete modernization of the development environment 
 ## [2.0.1] - 2025-07-22
 
 ### Fixed
-- **LSP Configuration**: Fixed mason-lspconfig setup by replacing deprecated `tsserver` with `ts_ls` 
+- **LSP Configuration**: Fixed mason-lspconfig setup by replacing deprecated `tsserver` with `ts_ls`
 - **Regex Engine Conflict**: Resolved cmp-cmdline plugin error by updating `regexpengine` setting from 1 to 2
 - **Command-line Completion**: Fixed regex parsing issues that were causing plugin loading failures
 
@@ -78,7 +78,7 @@ This release represents a complete modernization of the development environment 
 - **File Tree Filters**: Removed `.git` from custom filters to show git-related files
 
 ### Added
-- **Modern Neovim Options**: 
+- **Modern Neovim Options**:
   - `signcolumn = "yes"` (always show LSP diagnostic signs)
   - `mouse = "a"` (mouse support enabled)
   - `updatetime = 300` (faster LSP diagnostics)
@@ -90,3 +90,38 @@ This release represents a complete modernization of the development environment 
 
 ### Documentation
 - **Legacy Notice**: Added deprecation notice to original .vimrc pointing users to Neovim config
+
+## [2.0.2] - 2025-07-31
+
+### Added
+- **LSP Enhancements**:
+  - Styled floating windows for hover (K) and signature help (<C-s>) with rounded borders
+  - Custom diagnostic icons (✗ for errors, ▲ for warnings, ℹ for info, 💡 for hints)
+  - Inline virtual text diagnostic display for better code visibility
+- **lazydev.nvim Plugin**: Added to fix "Undefined global vim" warnings in Lua configuration files
+- **Buffer Management**: Enhanced buffer navigation with barbar.nvim shortcuts (,bc for close, ,bp for pin)
+- **Mason Updates**: Updated to use mason-org organization for improved LSP server management
+
+### Changed
+- **Plugin Replacements**:
+  - bufferline.nvim → barbar.nvim (cleaner, lighter buffer tabs with theme-aware highlighting)
+  - Preserved familiar gt/gT navigation keybindings with barbar integration
+- **LSP Configuration**:
+  - Fixed deprecated LSP handler syntax with modern approach
+  - Moved leader key setting to options.lua for proper load order
+- **Search Improvements**: Updated search mappings to use /\v regex mode with smart empty search handling
+- **Configuration Cleanup**: Organized LSP keymaps with consistent styling and error handling
+
+### Fixed
+- **LSP Warnings**: Resolved deprecated LSP handler warnings by updating to modern syntax
+- **Treesitter Configuration**: Cleaned up treesitter configuration warnings
+- **Load Order Issues**: Fixed leader key timing issues by moving to options.lua
+
+### Removed
+- **Redundant Plugins**:
+  - vim-sensible (redundant in modern Neovim)
+  - vim-ripgrep (replaced by Telescope live grep functionality)
+- **Legacy Neovim Options**: Cleaned up options that are now defaults in modern Neovim:
+  - `autoindent`, `incsearch`, `hlsearch`, `showmatch`
+  - `hidden`, `autoread`, `splitbelow`, `splitright`, `termguicolors`
+- **Performance Options**: Commented out deprecated performance settings (`lazyredraw`, `regexpengine`)

@@ -3,20 +3,14 @@
 These are my dotfiles for the following tools
 
  - [tmux](https://github.com/tmux/tmux)
- - [vim](https://github.com/vim/vim)
- - [neovim](https://github.com/neovim/neovim)
+ - [neovim](https://github.com/neovim/neovim) (primary editor)
 
 ## Install
 
  - Run `git clone https://github.com/DanielOchoa/dotfiles.git "${HOME}/.dotfiles"` in the terminal.
  - Run `"${HOME}/.dotfiles/install.sh"`. It will symlink the included dotfiles from this repo into your home directory.
 
-### For Vim Users (Deprecated)
- - You may want to run `brew install vim` to get the latest version of vim since Macos comes with vim 8.x.
- - Install [Vundle](https://github.com/VundleVim/Vundle.vim) to manage vim plugins.
- - Run `vim ~/.vimrc` then type `:BundleInstall`. This will install all vim plugins.
-
-### For Neovim Users (Recommended)
+### Neovim Setup
  - Install [Neovim](https://github.com/neovim/neovim) with `brew install neovim`.
  - Install dependencies: `brew install ripgrep fd` (required for telescope.nvim)
  - On first launch, Neovim will automatically install all plugins via lazy.nvim.
@@ -25,11 +19,19 @@ These are my dotfiles for the following tools
 ### Common Setup
  - Install [tmux](https://github.com/tmux/tmux) with [Homebrew](https://brew.sh/). (`brew install tmux`)
 
-### This works with
+### Requirements
 
- - vim 8.x and above
  - neovim 0.8+ (0.10+ recommended)
  - tmux 3.4
+
+### Migration from Vim
+
+If you were previously using the legacy Vim configuration from this repository:
+
+1. The `.vimrc` file has been removed as it's no longer maintained
+2. All functionality has been migrated to the modern Neovim configuration
+3. Simply install Neovim and follow the setup instructions above
+4. Your familiar keybindings and workflow will work the same way
 
 ## Neovim Features
 
