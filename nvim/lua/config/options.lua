@@ -1,6 +1,9 @@
 -- Neovim options (migrated from .vimrc)
 local opt = vim.opt
 
+-- Set leader key early (before any plugins load)
+vim.g.mapleader = ","
+
 -- Basic settings
 opt.number = true
 opt.wrap = true

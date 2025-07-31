@@ -2,7 +2,7 @@
 return {
   -- Mason for managing LSP servers, linters, formatters
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     config = function()
       require("mason").setup({
         ui = {
@@ -18,8 +18,8 @@ return {
 
   -- Mason integration with lspconfig
   {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = { "williamboman/mason.nvim" },
+    "mason-org/mason-lspconfig.nvim",
+    dependencies = { "mason-org/mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
@@ -33,40 +33,55 @@ return {
     end,
   },
 
+  -- configure LuaLS for nvim config edition (makes vim word a global known)
+  {
+    "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+
   -- LSP configuration
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
+      "folke/lazydev.nvim",
     },
     config = function()
       local lspconfig = require("lspconfig")
       local mason_lspconfig = require("mason-lspconfig")
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-      -- LSP keymaps
-      local on_attach = function(client, bufnr)
-        local opts = { noremap = true, silent = true, buffer = bufnr }
-        local keymap = vim.keymap.set
-
-        keymap("n", "gD", vim.lsp.buf.declaration, opts)
-        keymap("n", "gd", vim.lsp.buf.definition, opts)
-        keymap("n", "K", vim.lsp.buf.hover, opts)
-        keymap("n", "gi", vim.lsp.buf.implementation, opts)
-        keymap("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-        keymap("n", "<leader>rn", vim.lsp.buf.rename, opts)
-        keymap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-        keymap("n", "gr", vim.lsp.buf.references, opts)
-        keymap("n", "<leader>f", function()
-          vim.lsp.buf.format({ async = true })
-        end, opts)
-        
-        -- Diagnostic navigation
-        keymap("n", "[d", vim.diagnostic.goto_prev, opts)
-        keymap("n", "]d", vim.diagnostic.goto_next, opts)
-        keymap("n", "<leader>e", vim.diagnostic.open_float, opts)
-      end
+      -- Configure diagnostics to show inline messages
+      vim.diagnostic.config({
+        virtual_text = {
+          prefix = '●', -- Could be '■', '▎', 'x'
+          spacing = 4,
+          source = "if_many", -- show source if multiple sources
+        },
+        float = {
+          source = true, -- Or "if_many"
+          border = "rounded",
+        },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '✗',
+            [vim.diagnostic.severity.WARN] = '▲',
+            [vim.diagnostic.severity.INFO] = 'ℹ',
+            [vim.diagnostic.severity.HINT] = '💡',
+          },
+        },
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+      })
 
       -- Capabilities
       local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -77,7 +92,7 @@ return {
         handlers = {
           function(server_name)
             lspconfig[server_name].setup({
-              on_attach = on_attach,
+              -- on_attach = on_attach,
               capabilities = capabilities,
             })
           end,
@@ -85,7 +100,7 @@ return {
           -- Special configuration for specific servers
           ["ts_ls"] = function()
             lspconfig.ts_ls.setup({
-              on_attach = on_attach,
+              -- on_attach = on_attach,
               capabilities = capabilities,
               filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
             })
@@ -93,7 +108,7 @@ return {
 
           ["lua_ls"] = function()
             lspconfig.lua_ls.setup({
-              on_attach = on_attach,
+              -- on_attach = on_attach,
               capabilities = capabilities,
               settings = {
                 Lua = {
@@ -158,4 +173,3 @@ return {
     end,
   },
 }
-
