@@ -14,14 +14,10 @@ opt.colorcolumn = "+1"
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.expandtab = true
-opt.autoindent = true
 
 -- Search
 opt.ignorecase = true
 opt.smartcase = true
-opt.incsearch = true
-opt.hlsearch = true
-opt.showmatch = true
 
 -- UI
 opt.cursorline = true
@@ -32,16 +28,14 @@ opt.mouse = "a"
 opt.updatetime = 300
 opt.timeoutlen = 500
 
--- Performance
-opt.lazyredraw = true
-opt.regexpengine = 2
+-- Performance - DEPRECATED testing to see if they make a difference
+-- opt.lazyredraw = true
+-- opt.regexpengine = 2
 
 -- Files and backup
-opt.hidden = true
 opt.backup = true
 opt.swapfile = false
 opt.undofile = true
-opt.autoread = true
 
 -- Set backup directories (using Neovim standard paths)
 opt.backupdir = vim.fn.expand("~/.local/share/nvim/backup//")
@@ -58,15 +52,8 @@ if vim.fn.isdirectory(undo_dir) == 0 then
   vim.fn.mkdir(undo_dir, "p")
 end
 
--- Splits
-opt.splitbelow = true
-opt.splitright = true
-
 -- Clipboard
 opt.clipboard = "unnamed"
-
--- Terminal colors
-opt.termguicolors = true
 
 -- Comments format
 opt.comments = "sl:/*,mb:*,elx:*/*"

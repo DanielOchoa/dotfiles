@@ -52,7 +52,7 @@ return {
     -- Telescope keymaps
     local keymap = vim.keymap.set
     local builtin = require("telescope.builtin")
-    
+
     keymap("n", "<C-p>", builtin.find_files, { desc = "Find files" })
     keymap("n", "<leader>fg", builtin.live_grep, { desc = "Find string" })
     keymap("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
@@ -61,3 +61,4 @@ return {
     keymap("n", "<leader>fc", builtin.commands, { desc = "Find commands" })
   end,
 }
+

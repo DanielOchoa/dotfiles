@@ -8,9 +8,33 @@ keymap("i", "jj", "<Esc>", opts)
 keymap("i", "kk", "<C-O>o", opts) -- Jump to next line while in insert mode
 keymap("i", "<C-c>", "<CR><Esc>O", opts)
 
--- Search improvements
-keymap("n", "/", "/\\v", { noremap = true })
-keymap("v", "/", "/\\v", { noremap = true })
+-- Search improvements - use Telescope live grep with highlighting
+keymap("n", "/", function()
+  require("telescope.builtin").live_grep({
+    attach_mappings = function(prompt_bufnr, map)
+      local actions = require("telescope.actions")
+      local action_state = require("telescope.actions.state")
+
+      -- Add custom action that runs after default behavior
+      map("i", "<CR>", function()
+        local picker = action_state.get_current_picker(prompt_bufnr)
+        local prompt = picker:_get_prompt()
+
+        -- Run the default select action first
+        actions.select_default(prompt_bufnr)
+
+        -- Then set search register and highlight the term
+        if prompt and prompt ~= "" then
+          vim.fn.setreg("/", prompt)
+          vim.cmd("set hlsearch")
+        end
+      end)
+
+      return true
+    end,
+  })
+end, { desc = "Live grep search with highlighting" })
+
 keymap("n", "<leader><space>", ":noh<cr>", opts)
 keymap("n", "<tab>", "%", opts)
 keymap("v", "<tab>", "%", opts)
