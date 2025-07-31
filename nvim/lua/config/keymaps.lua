@@ -52,3 +52,12 @@ keymap("n", "<Leader>t", ":call RunCurrentSpecFile()<CR>", opts)
 keymap("n", "<Leader>s", ":call RunNearestSpec()<CR>", opts)
 keymap("n", "<Leader>l", ":call RunLastSpec()<CR>", opts)
 keymap("n", "<Leader>a", ":call RunAllSpecs()<CR>", opts)
+
+-- LSP keymaps with styled floating windows
+keymap("n", "K", function()
+  vim.lsp.buf.hover({ border = "rounded" })
+end, { desc = "LSP hover" })
+
+keymap("i", "<C-s>", function()
+  vim.lsp.buf.signature_help({ border = "rounded" })
+end, { desc = "LSP signature help" })

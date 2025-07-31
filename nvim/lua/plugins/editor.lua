@@ -1,8 +1,5 @@
 -- Editor enhancement plugins
 return {
-  -- Tim Pope's sensible defaults
-  { "tpope/vim-sensible" },
-
   -- Surround operations (modern Lua version)
   {
     "kylechui/nvim-surround",
@@ -48,14 +45,4 @@ return {
       -- Keymaps are already set in keymaps.lua
     end,
   },
-
-  -- Ripgrep integration
-  {
-    "jremmen/vim-ripgrep",
-    config = function()
-      -- Set ripgrep command options
-      vim.g.rg_command = "rg --vimgrep --smart-case --follow"
-    end,
-  },
 }
-

@@ -61,19 +61,3 @@ if vim.env.TERM and vim.env.TERM:match("^screen") then
   ]])
 end
 
--- Configure LSP floating windows globally - Not working..
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
-  max_width = 80,
-  max_height = 20,
-})
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = "rounded",
-  max_width = 80,
-  max_height = 20,
-})
-
--- Optional: Style the floating window borders
-vim.cmd("highlight FloatBorder guifg=#8ec07c guibg=NONE")
-vim.cmd("highlight NormalFloat guibg=#282828")
