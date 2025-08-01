@@ -39,6 +39,26 @@ return {
     -- Apply immediately
     vim.cmd('doautocmd ColorScheme')
 
+    -- Override :q to close buffer instead of quitting nvim when multiple buffers exist
+    vim.api.nvim_create_user_command('Q', function()
+      local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+      local visible_buffers = {}
+      for _, buf in ipairs(buffers) do
+        if buf.listed == 1 then
+          table.insert(visible_buffers, buf)
+        end
+      end
+
+      if #visible_buffers > 1 then
+        vim.cmd('BufferClose')
+      else
+        vim.cmd('quit')
+      end
+    end, {})
+
+    -- Create a command alias so :q calls our custom Q command
+    vim.cmd('cnoreabbrev <expr> q (getcmdtype() == ":" && getcmdline() == "q") ? "Q" : "q"')
+
     -- Buffer navigation keymaps (using your familiar gt/gT pattern)
     local map = vim.keymap.set
     map('n', 'gt', '<Cmd>BufferNext<CR>', { desc = 'Next buffer' })
