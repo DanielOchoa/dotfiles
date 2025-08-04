@@ -57,7 +57,7 @@ return {
     end, {})
 
     -- Create a command alias so :q calls our custom Q command
-    vim.cmd('cnoreabbrev <expr> q (getcmdtype() == ":" && getcmdline() == "q") ? "Q" : "q"')
+    vim.cmd('cabbrev <expr> q (getcmdtype() == ":" && getcmdline() == "q") ? "Q" : "q"')
 
     -- Buffer navigation keymaps (using your familiar gt/gT pattern)
     local map = vim.keymap.set
