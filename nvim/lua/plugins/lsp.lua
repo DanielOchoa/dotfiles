@@ -23,11 +23,11 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "ts_ls",         -- TypeScript/JavaScript (formerly tsserver)
-          "gopls",         -- Go
-          "rust_analyzer", -- Rust
-          "elixirls",      -- Elixir
-          "lua_ls",        -- Lua
+          "ts_ls", -- TypeScript/JavaScript (formerly tsserver)
+          "gopls", -- Go
+          -- "rust_analyzer", -- Rust
+          -- "elixirls",      -- Elixir
+          "lua_ls", -- Lua
         },
       })
     end,
