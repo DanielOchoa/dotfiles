@@ -16,8 +16,14 @@ These are my dotfiles for the following tools
  - On first launch, Neovim will automatically install all plugins via lazy.nvim.
  - LSP servers and formatters will be installed automatically via Mason.
 
-### Common Setup
+### Tmux Setup
  - Install [tmux](https://github.com/tmux/tmux) with [Homebrew](https://brew.sh/). (`brew install tmux`)
+ - The configuration includes a custom status line with:
+   - Session name display (left)
+   - Window tabs with current window highlighting
+   - Date, time, and hostname (right)
+   - Golden/amber accent colors on dark gray background
+   - Matching pane borders
 
 ### Requirements
 
