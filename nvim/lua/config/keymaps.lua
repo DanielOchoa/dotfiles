@@ -53,6 +53,11 @@ keymap("n", "<Leader>s", ":call RunNearestSpec()<CR>", opts)
 keymap("n", "<Leader>l", ":call RunLastSpec()<CR>", opts)
 keymap("n", "<Leader>a", ":call RunAllSpecs()<CR>", opts)
 
+-- Buffer navigation
+keymap("n", "gt", ":bnext<CR>", { noremap = true, silent = true, desc = "Next buffer" })
+keymap("n", "gT", ":bprevious<CR>", { noremap = true, silent = true, desc = "Previous buffer" })
+keymap("n", "<leader>bc", ":bdelete<CR>", { noremap = true, silent = true, desc = "Close buffer" })
+
 -- LSP keymaps with styled floating windows
 keymap("n", "K", function()
   vim.lsp.buf.hover({ border = "rounded" })

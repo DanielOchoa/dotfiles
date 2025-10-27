@@ -125,3 +125,18 @@ This release represents a complete modernization of the development environment 
   - `autoindent`, `incsearch`, `hlsearch`, `showmatch`
   - `hidden`, `autoread`, `splitbelow`, `splitright`, `termguicolors`
 - **Performance Options**: Commented out deprecated performance settings (`lazyredraw`, `regexpengine`)
+
+## [2.0.3] - 2025-10-26
+
+### Changed
+- **Plugin Replacements**:
+  - barbar.nvim → bufferline.nvim (reverted to bufferline for better stability and active maintenance)
+  - Configured with slant separators, LSP diagnostics integration, and neo-tree offset support
+
+### Added
+- **Tmux Status Line**: Added OneDark-themed tmux status line with green accents and enhanced system information
+- **VSCode Integration**: Added vscode-init.lua to support Neovim plugin for VSCode/Cursor editors
+- **Runtime Version Manager**: Added .tool-versions file for asdf runtime version manager support
+
+### Removed
+- **barbar.nvim**: Removed in favor of bufferline.nvim for improved compatibility and feature set
