@@ -126,6 +126,18 @@ This release represents a complete modernization of the development environment 
   - `hidden`, `autoread`, `splitbelow`, `splitright`, `termguicolors`
 - **Performance Options**: Commented out deprecated performance settings (`lazyredraw`, `regexpengine`)
 
+## [2.0.4] - 2025-11-26
+
+### Added
+- **gitsigns.nvim Plugin**: Added for enhanced git integration with inline blame, hunk navigation, and staging
+
+### Changed
+- **Bufferline Style**: Changed separator style from "slant" to "thin" for cleaner appearance
+- **Plugin Updates**: Updated lazy-lock.json with latest plugin versions
+
+### Fixed
+- **Tmux Status Bar**: Removed broken powerline separators from tmux status bar config
+
 ## [2.0.3] - 2025-10-26
 
 ### Changed

@@ -6,7 +6,7 @@ return {
     require("bufferline").setup({
       options = {
         mode = "buffers",
-        separator_style = "slant", -- or "thick", "thin", "slope"
+        separator_style = "thin", -- "slant", "thick", "thin", "slope"
         close_command = "bdelete! %d",
         right_mouse_command = "bdelete! %d",
         offsets = {
